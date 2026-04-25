@@ -40,8 +40,8 @@ header {
 /* La segunda palabra (Amarillo Neón con fuente Rye) */
 .palabra-rosa {
     font-family: "Rye", serif;
-    color: #ffe600; /* Tu Amarillo Neón */
-    text-shadow: 0 0 5px #ffe600;
+    color: #f4bb44; /* Tu Amarillo Neón */
+    text-shadow: 0 0 5px #f4bb44;
 }
 
 /* Tus enlaces de navegación */
@@ -57,7 +57,7 @@ nav a {
 
 /* Efecto cuando pasas el mouse por encima del menú */
 nav a:hover {
-    color: #ffe600; 
+    color: #f4bb44; 
 }
 
 /* Sección Hero (Principal) */
@@ -100,7 +100,7 @@ nav a:hover {
     text-align: center;
     margin-bottom: 40px;
     font-size: 2rem;
-    color: #ffe600;
+    color: #f4bb44;
 }
 
 .menu-item {
@@ -147,7 +147,7 @@ footer h2 {
 /* Colores base */
 :root {
     --rosa-neon: #e60dba;
-    --amarillo-neon: #ffe600;
+    --amarillo-neon: #f4bb44;
     --gris-fondo: #1a1a1a;
 }
 
@@ -191,9 +191,9 @@ footer h2 {
 
 /* Al pasar el mouse: Cambia a Amarillo Neón */
 .boton-neon-grande:hover {
-    background-color: #ffe600 !important;
+    background-color: #f4bb44 !important;
     color: black !important;
-    box-shadow: 0 0 25px #ffe600;
+    box-shadow: 0 0 25px #f4bb44;
     transform: scale(1.05); /* Se hace un poquito más grande */
 }
 
