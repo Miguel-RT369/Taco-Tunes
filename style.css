@@ -46,7 +46,7 @@ header {
 
 /* Tus enlaces de navegación */
 nav a {
-    color: #ff00ff; 
+    color: #e60dba; 
     text-decoration: none;
     margin-left: 20px;
     font-size: 0.9rem;
@@ -146,9 +146,9 @@ footer h2 {
 /* Segunda pagina menu.html */
 /* Colores base */
 :root {
-    --rosa-neon: #ff00ff;
+    --rosa-neon: #e60dba;
     --amarillo-neon: #ffe600;
-    --gris-fondo: #282525;
+    --gris-fondo: #1a1a1a;
 }
 
 .bg-gris-oscuro {
@@ -173,24 +173,28 @@ footer h2 {
 }
 
 /* El botón que pondrás en el index */
+/* Estado normal: Rosa Neón */
 .boton-neon-grande {
     display: inline-block;
     padding: 15px 30px;
-    background-color: var(--rosa-neon);
-    color: white;
+    background-color: #e60dba !important;
+    color: white !important;
     text-decoration: none;
     font-family: 'Rye', serif;
     font-size: 1.5rem;
-    border-radius: 5px;
-    box-shadow: 0 0 15px var(--rosa-neon);
-    transition: 0.3s;
-    margin-top: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 15px #e60dba;
+    transition: 0.3s; /* Esto hace que el cambio de color sea suave */
+    border: none;
+    cursor: pointer;
 }
 
+/* Al pasar el mouse: Cambia a Amarillo Neón */
 .boton-neon-grande:hover {
-    background-color: var(--amarillo-neon);
-    color: black;
-    box-shadow: 0 0 20px var(--amarillo-neon);
+    background-color: #ffe600 !important;
+    color: black !important;
+    box-shadow: 0 0 25px #ffe600;
+    transform: scale(1.05); /* Se hace un poquito más grande */
 }
 
 /* Ajuste para que la tienda de Ecwid no se vea apretada */
