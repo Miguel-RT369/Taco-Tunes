@@ -229,23 +229,31 @@ body, h1, h2, p, a {
     background-color: transparent; /* Para que luzca tu fondo de la página */
 }
 
-/* 1. Hace que la tienda, el carrito y la bolsa empiecen invisibles */
-.ec-store, 
-.ec-cart, 
-.ec-bag, 
-.ec-store__product-details {
+/* 1. Estado inicial: Invisible pero listo */
+.ec-store, .ec-cart, .ec-bag, .ec-store__product-details {
     opacity: 0;
-    transition: opacity 0.4s ease-in-out; /* Aparece suave en casi medio segundo */
+    /* Reducimos el tiempo a 0.2s para que sea casi instantáneo */
+    transition: opacity 0.2s ease-in-out;
+    
+    /* SEGURO DE EMERGENCIA: Si el JS falla, aparece a los 1.5 segundos 
+       (antes estaba en 3s, por eso se sentía lento) */
+    animation: forzarAparicionRapida 1.5s forwards;
 }
 
-/* 2. Esta es la clase que el JavaScript activará automáticamente */
+/* 2. Clase que activa el JavaScript (Máxima prioridad) */
 .tienda-lista {
     opacity: 1 !important;
+    visibility: visible !important;
 }
 
-/* 3. Evita que los nombres largos "empujen" el diseño antes de cortarse */
-.ec-bag__product-name, 
-.grid-product__title-inner {
-    max-height: 2.4em;
-    overflow: hidden;
+/* Animación de respaldo más rápida */
+@keyframes forzarAparicionRapida {
+    0% { opacity: 0; }
+    80% { opacity: 0; } 
+    100% { opacity: 1; }
+}
+
+/* Extra: Evita que el contenido salte bruscamente */
+.ec-wid-wrapper {
+    min-height: 400px;
 }

@@ -32,7 +32,7 @@
 
     <script>
   function traductorUniversal() {
-    // Buscamos absolutamente todo el texto de la página
+    // 1. Lógica de traducción: Buscamos el texto después de la barra '|'
     const todosLosElementos = document.querySelectorAll('h1, h2, h3, div, span, a, p, .ec-store__product-name, .product-details__product-title');
     
     todosLosElementos.forEach(el => {
@@ -44,12 +44,16 @@
       }
     });
 
-    // --- ESTO ES LO QUE DEBES AGREGAR ---
-    // Hace que la tienda aparezca suavemente después de traducir
-    const tienda = document.querySelector('.ec-store');
-    if(tienda) {
-        tienda.classList.add('tienda-lista');
-    }
+    // 2. REFUERZO DE VISIBILIDAD: Para que el celular no se quede en negro
+    const tienda = document.querySelectorAll('.ec-store, .ec-wid-wrapper, .ec-cart, .ec-bag');
+    tienda.forEach(contenedor => {
+        if(contenedor) {
+            contenedor.classList.add('tienda-lista');
+            // Forzamos la opacidad directamente para saltarnos bloqueos del navegador
+            contenedor.style.opacity = "1";
+            contenedor.style.visibility = "visible";
+        }
+    });
   }
 
   // Se ejecuta cada 500ms

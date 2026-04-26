@@ -93,13 +93,18 @@
       }
     });
 
-    // --- ESTO ES LO NUEVO PARA EL CSS ---
-    const tienda = document.querySelector('.ec-store');
+    // --- REFUERZO DE VISIBILIDAD PARA MÓVILES ---
+    // Buscamos cualquier contenedor posible de la tienda
+    const tienda = document.querySelector('.ec-store, .ec-wid-wrapper, .ec-cart, .ec-bag');
     if(tienda) {
         tienda.classList.add('tienda-lista');
+        // Esto es el "tiro de gracia" para que el iPhone no lo vea negro
+        tienda.style.opacity = "1";
+        tienda.style.visibility = "visible";
     }
   }
 
+  // Lo corremos cada 300ms
   setInterval(limpiezaTotalEspañol, 300);
 </script>
 </body>
