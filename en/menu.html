@@ -6,16 +6,16 @@
 <link href="https://fonts.googleapis.com/css2?family=Rye&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MENU DIGITAL | TAKO TUNES</title>
-    <link rel="stylesheet" href="style.css">
+    <title>DIGITAL MENU | TAKO TUNES</title>
+    <link rel="stylesheet" href="../style.css">
     <link href="https://fonts.googleapis.com/css2?family=Rye&display=swap" rel="stylesheet">
 </head>
 <body class="bg-gris-oscuro">
 
     <header class="header-neon">
-        <h1 class="rye-regular">NUESTRO MENÚ</h1>
+        <h1 class="rye-regular">DIGITAL MENU</h1>
         <nav>
-            <a href="index.html" class="btn-volver">← VOLVER AL INICIO</a>
+            <a href="index.html" class="btn-volver">← BACK TO HOME</a>
         </nav>
     </header>
 
@@ -30,32 +30,30 @@
         <p>© 2026 TAKO TUNES</p>
     </footer>
 
-<script>
-  function limpiezaTotalEspañol() {
-    const clases = '.ec-store__product-name, .grid-product__title-inner, .grid-product__description, .product-details__product-title, .product-details__product-description, .ec-bag__product-name, .ec-summary__product-name, .ec-base-text';
-    const elementos = document.querySelectorAll(clases);
+    <script>
+  function traductorUniversal() {
+    // Buscamos absolutamente todo el texto de la página
+    const todosLosElementos = document.querySelectorAll('h1, h2, h3, div, span, a, p, .ec-store__product-name, .product-details__product-title');
     
-    elementos.forEach(el => {
-      if (el.innerText && el.innerText.includes('|')) {
+    todosLosElementos.forEach(el => {
+      if (el.children.length === 0 && el.innerText.includes('|')) {
         const partes = el.innerText.split('|');
-        if (partes[0]) {
-          if (el.children.length > 0) {
-              el.innerHTML = partes[0].trim();
-          } else {
-              el.textContent = partes[0].trim();
-          }
+        if (partes[1]) {
+          el.innerText = partes[1].trim(); // Deja solo el inglés
         }
       }
     });
 
-    // --- ESTO ES LO NUEVO PARA EL CSS ---
+    // --- ESTO ES LO QUE DEBES AGREGAR ---
+    // Hace que la tienda aparezca suavemente después de traducir
     const tienda = document.querySelector('.ec-store');
     if(tienda) {
         tienda.classList.add('tienda-lista');
     }
   }
 
-  setInterval(limpiezaTotalEspañol, 300);
+  // Se ejecuta cada 500ms
+  setInterval(traductorUniversal, 500);
 </script>
 </body>
 </html>

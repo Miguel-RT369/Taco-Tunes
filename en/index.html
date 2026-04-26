@@ -7,7 +7,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TAKO TUNES | TAKOS SIN IGUAL</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../style.css">
 </head>
 <body>
 
@@ -15,36 +15,36 @@
        <div class="logo">
     TAKO <span class="palabra-rosa">TUNES</span>
 </div>
-<a href="./en/index.html" style="color: #FDBE02; text-decoration: none; font-family: 'Rye';">English 🇺🇸</a>
+<a href="../index.html" style="color: #ff00ff; text-decoration: none; font-family: 'Rye';">Español 🇲🇽</a>
         <nav>
-            <a href="#menu" class="rye-regular">Menú</a>
-            <a href="#contacto" class="rye-regular">Contacto</a>
+            <a href="#menu" class="rye-regular">MENU</a>
+            <a href="#contacto" class="rye-regular">CONTACT</a>
         </nav>
     </header>
 
     <section id="hero">
         <div class="hero-content">
-            <h1>Takos al ritmo de tu paladar</h1>
-            <p>Los mejores takos de la ciudad</p>
+            <h1>Takos to the rhythm of your palate</h1>
+            <p>The best takos in the city</p>
         
         </div>
     </section>
 
     <section class="llamado-accion">
     <div class="contenedor-boton">
-    <a href="menu.html" class="boton-neon-grande">ORDENA AQUÍ</a>
+    <a href="menu.html" class="boton-neon-grande">ORDER HERE</a>
 </div>
     </section>
 
     <main id="menu">
-        <h2 class="section-title">Nuestro Menú</h2>
+        <h2 class="section-title">Menu</h2>
         
         
         <div class="menu-container">
             <article class="menu-item">
                 <div class="menu-info">
                     <h3>Tako Mariachi</h3>
-                    <p>Carne al pastor, cebolla, cilantro y salsa roja</p>
+                    <p>Pork meat marinated, onion, cilantro and red sauce</p>
                 </div>
                 <span class="price">$3.00</span>
             </article>
@@ -52,7 +52,7 @@
             <article class="menu-item">
                 <div class="menu-info">
                     <h3>Tako Trovador</h3>
-                    <p>Carne de res, cebolla, cilantro y salsa verde</p>
+                    <p>Beef, onion, cilantro and green sauce</p>
                 </div>
                 <span class="price">$3.50</span>
             </article>
@@ -60,7 +60,7 @@
             <article class="menu-item">
                 <div class="menu-info">
                     <h3>Paquete Serenata</h3>
-                    <p>Tres Takos Mariachi con cebolla, cilantro y salsa roja</p>
+                    <p>Three Takos Mariachi with onion, cilantro and red sauce</p>
                 </div>
                 <span class="price">$7.50</span>
             </article>
@@ -68,39 +68,37 @@
     </main>
 
     <footer id="contacto">
-        <h2>Visítanos</h2>
+        <h2>Visit us</h2>
         <p>📍 600 E 800 S, Orem, UT</p>
-        <p>⏰ Horario: Lun - Dom | 03:00 PM - 10:00 PM</p>
+        <p>⏰ Hours: Mon - Sun | 03:00 PM - 10:00 PM</p>
         <p>📞 WhatsApp: +123 456 7890</p>
         <div class="copyright">© 2026 TAKO TUNES</div>
     </footer>
 
-<script>
-  function limpiezaTotalEspañol() {
-    const clases = '.ec-store__product-name, .grid-product__title-inner, .grid-product__description, .product-details__product-title, .product-details__product-description, .ec-bag__product-name, .ec-summary__product-name, .ec-base-text';
-    const elementos = document.querySelectorAll(clases);
+ <script>
+  function traductorUniversal() {
+    // Buscamos absolutamente todo el texto de la página
+    const todosLosElementos = document.querySelectorAll('h1, h2, h3, div, span, a, p, .ec-store__product-name, .product-details__product-title');
     
-    elementos.forEach(el => {
-      if (el.innerText && el.innerText.includes('|')) {
+    todosLosElementos.forEach(el => {
+      if (el.children.length === 0 && el.innerText.includes('|')) {
         const partes = el.innerText.split('|');
-        if (partes[0]) {
-          if (el.children.length > 0) {
-              el.innerHTML = partes[0].trim();
-          } else {
-              el.textContent = partes[0].trim();
-          }
+        if (partes[1]) {
+          el.innerText = partes[1].trim(); // Deja solo el inglés
         }
       }
     });
 
-    // --- ESTO ES LO NUEVO PARA EL CSS ---
+    // --- ESTO ES LO QUE DEBES AGREGAR ---
+    // Hace que la tienda aparezca suavemente después de traducir
     const tienda = document.querySelector('.ec-store');
     if(tienda) {
         tienda.classList.add('tienda-lista');
     }
   }
 
-  setInterval(limpiezaTotalEspañol, 300);
+  // Se ejecuta cada 500ms
+  setInterval(traductorUniversal, 500);
 </script>
 </body>
 </html>

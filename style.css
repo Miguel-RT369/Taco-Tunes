@@ -40,8 +40,8 @@ header {
 /* La segunda palabra (Amarillo Neón con fuente Rye) */
 .palabra-rosa {
     font-family: "Rye", serif;
-    color: #f4bb44; /* Tu Amarillo Neón */
-    text-shadow: 0 0 5px #f4bb44;
+    color: #FDBE02; /* Tu Amarillo Neón */
+    text-shadow: 0 0 5px #FDBE02;
 }
 
 /* Tus enlaces de navegación */
@@ -57,7 +57,7 @@ nav a {
 
 /* Efecto cuando pasas el mouse por encima del menú */
 nav a:hover {
-    color: #f4bb44; 
+    color: #FDBE02; 
 }
 
 /* Sección Hero (Principal) */
@@ -100,7 +100,7 @@ nav a:hover {
     text-align: center;
     margin-bottom: 40px;
     font-size: 2rem;
-    color: #f4bb44;
+    color: #FDBE02;
 }
 
 .menu-item {
@@ -147,7 +147,7 @@ footer h2 {
 /* Colores base */
 :root {
     --rosa-neon: #e60dba;
-    --amarillo-neon: #f4bb44;
+    --amarillo-neon: #FDBE02;
     --gris-fondo: #1a1a1a;
 }
 
@@ -191,9 +191,9 @@ footer h2 {
 
 /* Al pasar el mouse: Cambia a Amarillo Neón */
 .boton-neon-grande:hover {
-    background-color: #f4bb44 !important;
+    background-color: #FDBE02 !important;
     color: black !important;
-    box-shadow: 0 0 25px #f4bb44;
+    box-shadow: 0 0 25px #FDBE02;
     transform: scale(1.05); /* Se hace un poquito más grande */
 }
 
@@ -227,4 +227,25 @@ body, h1, h2, p, a {
     margin: 20px auto;
     padding: 10px;
     background-color: transparent; /* Para que luzca tu fondo de la página */
+}
+
+/* 1. Hace que la tienda, el carrito y la bolsa empiecen invisibles */
+.ec-store, 
+.ec-cart, 
+.ec-bag, 
+.ec-store__product-details {
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out; /* Aparece suave en casi medio segundo */
+}
+
+/* 2. Esta es la clase que el JavaScript activará automáticamente */
+.tienda-lista {
+    opacity: 1 !important;
+}
+
+/* 3. Evita que los nombres largos "empujen" el diseño antes de cortarse */
+.ec-bag__product-name, 
+.grid-product__title-inner {
+    max-height: 2.4em;
+    overflow: hidden;
 }
